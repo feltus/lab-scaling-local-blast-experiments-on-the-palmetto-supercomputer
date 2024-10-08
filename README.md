@@ -5,9 +5,17 @@ The Basic Local Alignment Search Tool (BLAST) will perform pairwise alignments u
 
 Running BLAST on a supercomputer allows for big time scale up.  In this lab you will run a BLAST job that can take more than 24 hours. In this lab we will install BLAST+ on Palmetto and use it to map all human non-coding RNAs to the hg38 human reference genome. 
 
-Don’t forget to review how to use Palmetto here:
+# Getting help
 
-https://docs.rcd.clemson.edu/palmetto/
+Review how to use Palmetto here: https://docs.rcd.clemson.edu/palmetto/
+
+Useful Prometheus prompts:
+
+'``
+What is a job scheduler on a shared computer cluster and what is the scheduler on the Clemson Plametto 2 cluster? 
+Please provide a cheatsheet of SLURM directives and command line tools.
+How do I create a text file on the bash command line?
+```
 
 # Lab Objectives
 * Install BLAST+ on the Palmetto Cluster
@@ -52,7 +60,7 @@ makeblastdb -h
 ```
 Download the sequence files and index the BLAST database.
 
-# Task B
+# Task B Index the g=human genome sequences for BLAST
 
 ***Step A. Download the human genome and cDNA sequence files into a directory in scratch.***
 
@@ -104,4 +112,31 @@ This will take a while. Use the squeue command to see if the job is still runnin
 squeue -u YOUR_USERNAME
 ```
 If it worked you will see indexed files that start with HG38_GENOME in the scratch2 directory where the genome FASTA file is located.
+
+# Task C. BLAST Human cDNA sequences against the Human Genome
+You will need blastn for this.  The cDNA hits will provide coordinates of genes in the human genome. Type the ‘blastn -h’ command for the command line parameters.
+
+***Step A. Make a SLURM script to runthe BLAST analysis as a batch job.
+
+Use a text editor (e.g. nano) to make a SLURM script (e.g. blastn.slurm) with the commands you need.  The top of the SLURM script are SLURM directives that tell the scheduler how many resources you need.  Below the directives, add the command lines you will need to align the human cDNA FASTA file against the reference human genome you indexed. You will need to change to the directory where you the cDNA and index files exist. Then run the blastn command on the genome file. Note: make sure each command line is on one line in your SLURM script file and use your username and directory structure.
+
+```
+#!/bin/bash
+#SBATCH --job-name MAKEBLASTDB
+#SBATCH --nodes 1
+#SBATCH --tasks-per-node 1
+#SBATCH --cpus-per-task 1
+#SBATCH --mem 64gb
+#SBATCH --time 48:00:00
+
+cd /scratch/ffeltus/blast
+blastn -db HG38_GENOME -query Homo_sapiens.GRCh38.ncrna.fa -outfmt 6 -evalue 1e-100 > HG38-NCRNA_HG38Genome.blastn
+```
+
+Run the pbs script using qsub (e.g. ‘qsub blastn.pbs’). The blast job will take a while (hours). Use the ‘qstat -u YOUR_USERNAME’ to see if the job is still running.  If it worked, you would see alignment data in the HG38-CDNA_HG38Genome.blastn file.
+
+***Step B. Turn in your report in the homework folder in the Praxis LXP VM.***
+
+Count the number of sequences in the non-coding RNA file and count the number of hits in your BLASTN output file.  (NOTE: You can count the number of sequences in a FASTA file like this: ‘cat FILE | grep ‘>’ | wc -l’ and you can count the number of one per line hits like this ‘wc -l HG38-NCRNA_HG38Genome.blastn’
+Paste these into a text file in the Praxis Linux VM and copy to the homework folder in the Praxis LXP VM.  (If you need more practice, run the analysis at different E-value cutoffs and see how many hits you get … totally optional).
 
