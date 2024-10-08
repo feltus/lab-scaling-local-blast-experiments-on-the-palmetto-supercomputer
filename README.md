@@ -28,10 +28,17 @@ How do I create a text file on the bash command line?
 ***Step A. Install local NCBI BLAST+ on Palmetto.***
 
 * Open a terminal and log into a Palmetto headnode.
-Get an interactive node on Palmetto.  Here is an example SLURm command to get an interactive node:
+Get an interactive node on Palmetto.  Here is an example SLURM command to get an interactive node:
 
 ```
 srun --nodes=1 --ntasks-per-node=1 --time=02:00:00 --pty bash -i
+```
+
+Create a working directory on scratch and go to it.
+
+```
+mkdir /scratch/ffeltus/blast-software
+cd /scratch/ffeltus/blast-software
 ```
 
 Download the BLAST executable.
