@@ -106,7 +106,7 @@ Use a text editor (e.g. nano) to make a SLURM script (e.g. index.slurm) with the
 #SBATCH --mem 64gb
 #SBATCH --time 24:00:00
 
-cd /scratch/ffeltus/blast
+cd /scratch/ffeltus/human-cdna-genome-blast
 makeblastdb -in Homo_sapiens.GRCh38.dna.primary_assembly.fa -dbtype nucl -out HG38_GENOME
 ```
 Run the SLURM script using sbatch.
@@ -138,7 +138,7 @@ Use a text editor (e.g. nano) to make a SLURM script (e.g. blastn.slurm) with th
 #SBATCH --mem 64gb
 #SBATCH --time 48:00:00
 
-cd /scratch/ffeltus/blast
+cd /scratch/ffeltus/human-cdna-genome-blast
 blastn -db HG38_GENOME -query Homo_sapiens.GRCh38.ncrna.fa -outfmt 6 -evalue 1e-100 > HG38-NCRNA_HG38Genome.blastn
 ```
 
