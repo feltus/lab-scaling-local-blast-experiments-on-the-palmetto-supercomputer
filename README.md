@@ -68,7 +68,7 @@ makeblastdb -h
 ```
 Download the sequence files and index the BLAST database.
 
-# Task B Index the human reference genomesequences for BLAST
+# Task B Index the human reference genome sequences for BLAST
 
 ***Step A. Download the human genome and cDNA sequence files into a directory into your working directory on scratch.***
 
@@ -125,7 +125,7 @@ If it worked you will see indexed files that start with HG38_GENOME in the scrat
 # Task C. BLAST Human cDNA sequences against the Human Genome
 You will need blastn for this.  The cDNA hits will provide coordinates of genes in the human genome. Type the ‘blastn -h’ command for the command line parameters.
 
-***Step A. Make a SLURM script to runthe BLAST analysis as a batch job.
+***Step A. Make a SLURM script to runthe BLAST analysis as a batch job.***
 
 Use a text editor (e.g. nano) to make a SLURM script (e.g. blastn.slurm) with the commands you need.  The top of the SLURM script are SLURM directives that tell the scheduler how many resources you need.  Below the directives, add the command lines you will need to align the human cDNA FASTA file against the reference human genome you indexed. You will need to change to the directory where you the cDNA and index files exist. Then run the blastn command on the genome file. Note: make sure each command line is on one line in your SLURM script file and use your username and directory structure.
 
