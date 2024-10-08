@@ -16,14 +16,13 @@ https://docs.rcd.clemson.edu/palmetto/
 
 # Task A
 
-Install BLAST+ on Palmetto so you can run massive BLAST jobs.
+***Step A. Install local NCBI BLAST+ on Palmetto.***
 
-# Step A. Install local NCBI BLAST+ on Palmetto.
+* Open a terminal and log into a Palmetto headnode.
+Get an interactive node on Palmetto.  Here is an example SLURm command to get an interactive node:
 
-Open a terminal and log into Palmetto.
-Get an interactive node on Palmetto like this:
+Inline code: srun --nodes=1 --ntasks-per-node=1 --time=02:00:00 --pty bash -i
 
-'qsub -I -l select=1:ncpus=2:mem=4gb,walltime=24:00:00
 Download the BLAST executable.
 wget https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.11.0/ncbi-blast-2.11.0+-x64-linux.tar.gz
 Uncompress the BLAST tarball and copy files into your path.
