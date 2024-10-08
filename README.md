@@ -12,10 +12,10 @@ Review how to use Palmetto here: https://docs.rcd.clemson.edu/palmetto/
 Useful Prometheus prompts:
 
 ```
-Provide a brief overview of the BLAST local alignment algorithm and explain how the BLAST algorithm is different from a global alignment algorithm. 
-What is a job scheduler on a shared computer cluster and what is the scheduler on the Clemson Palmetto 2 cluster? 
-Please provide a cheatsheet of SLURM directives and command line tools.
-How do I create a text file on the bash command line?
+* Provide a brief overview of the BLAST local alignment algorithm and explain how the BLAST algorithm is different from a global alignment algorithm. 
+* What is a job scheduler on a shared computer cluster and what is the scheduler on the Clemson Palmetto 2 cluster? 
+* Please provide a cheatsheet of SLURM directives and command line tools.
+* How do I create a text file on the bash command line?
 ```
 
 # Lab Objectives
