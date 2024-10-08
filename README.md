@@ -142,7 +142,15 @@ cd /scratch/ffeltus/human-cdna-genome-blast
 blastn -db HG38_GENOME -query Homo_sapiens.GRCh38.ncrna.fa -outfmt 6 -evalue 1e-100 > HG38-NCRNA_HG38Genome.blastn
 ```
 
-Run the pbs script using qsub (e.g. ‘qsub blastn.pbs’). The blast job will take a while (hours). Use the ‘qstat -u YOUR_USERNAME’ to see if the job is still running.  If it worked, you would see alignment data in the HG38-CDNA_HG38Genome.blastn file.
+Run the SLURM script using sbatch.
+
+```
+sbatch blastn.slurm
+```
+
+This will take a while. Use the squeue command to see if the job is still running.
+
+If it worked you will see BLAST hits in the redirected output file (e.g. HG38-NCRNA_HG38Genome.blastn) where each line is a BLAST hit.
 
 ***Step B. Turn in your report in the homework folder in the Praxis LXP VM.***
 
