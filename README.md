@@ -99,7 +99,7 @@ Uncompress the files and ‘head’ and ‘tail’ them on the Linux command lin
 Use a text editor (e.g. nano) to make a SLURM script (e.g. index.slurm) with the commands you need.  The top of the SLURM script are SLURM directives that tell the scheduler how many resources you need.  Below the directives, add the command lines you will need to index the FASTA genome file for BLAST. You will need to change to the directory where you will index the files and then run the makeblastdb command on the genome file. Make sure to use your username and not mine. For example (make sure each command line is on one line in your SLURM script file):
 ```
 #!/bin/bash
-#SBATCH --job-name MAKEBLASTDB
+#SBATCH --job-name INDEX
 #SBATCH --nodes 1
 #SBATCH --tasks-per-node 1
 #SBATCH --cpus-per-task 1
@@ -131,7 +131,7 @@ Use a text editor (e.g. nano) to make a SLURM script (e.g. blastn.slurm) with th
 
 ```
 #!/bin/bash
-#SBATCH --job-name MAKEBLASTDB
+#SBATCH --job-name BLAST
 #SBATCH --nodes 1
 #SBATCH --tasks-per-node 1
 #SBATCH --cpus-per-task 1
