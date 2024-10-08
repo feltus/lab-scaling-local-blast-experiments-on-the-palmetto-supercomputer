@@ -54,7 +54,7 @@ Download the sequence files and index the BLAST database.
 
 # Task B
 
-***Step A. Download the human genome and cDNA sequence files into a directory in scratch.
+***Step A. Download the human genome and cDNA sequence files into a directory in scratch.***
 
 Open a terminal and log into Palmetto.
 Get an Interactive node on Palmetto.
@@ -77,9 +77,9 @@ ftp://ftp.ensembl.org/pub/release-101/fasta/homo_sapiens/ncrna/Homo_sapiens.GRCh
 
 Uncompress the files and ‘head’ and ‘tail’ them on the Linux command line to see if they look correct.
 
-***Step B. Index the Genome file for BLAST
+***Step B. Index the Genome file for BLAST***
 
-Use a text editor (e.g. nano) to make a SLURM script (e.g. index.pbs) with the commands you need.  The top of the SLURM script are SLURM directives that tell the scheduler how many resources you need.  Below the directives, add the command lines you will need to index the FASTA genome file for BLAST. You will need to change to the directory where you will index the files and then run the makeblastdb command on the genome file. Make sure to use your username and not mine. For example (make sure each command line is on one line in your SLURM script file):
+Use a text editor (e.g. nano) to make a SLURM script (e.g. index.slurm) with the commands you need.  The top of the SLURM script are SLURM directives that tell the scheduler how many resources you need.  Below the directives, add the command lines you will need to index the FASTA genome file for BLAST. You will need to change to the directory where you will index the files and then run the makeblastdb command on the genome file. Make sure to use your username and not mine. For example (make sure each command line is on one line in your SLURM script file):
 ```
 #!/bin/bash
 #SBATCH --job-name MAKEBLASTDB
