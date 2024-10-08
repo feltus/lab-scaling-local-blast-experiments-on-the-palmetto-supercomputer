@@ -9,3 +9,9 @@ Don’t forget to review how to use Palmetto here:
 
 https://docs.rcd.clemson.edu/palmetto/
 
+# Lab Objectives
+..*
+Install BLAST+ on the Palmetto Cluster
+Format a sequence database on the local machine.
+Perform a BLAST experiment using a PBS batch job.
+
