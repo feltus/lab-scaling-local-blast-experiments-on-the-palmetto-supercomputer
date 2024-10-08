@@ -68,9 +68,9 @@ makeblastdb -h
 ```
 Download the sequence files and index the BLAST database.
 
-# Task B Index the g=human genome sequences for BLAST
+# Task B Index the human reference genomesequences for BLAST
 
-***Step A. Download the human genome and cDNA sequence files into a directory in scratch.***
+***Step A. Download the human genome and cDNA sequence files into a directory into your working directory on scratch.***
 
 Open a terminal and log into Palmetto.
 Get an Interactive node on Palmetto.
@@ -80,7 +80,8 @@ srun --nodes=1 --ntasks-per-node=1 --time=04:00:00 --pty bash -i
 Make a directory to do do this project in scratch.
 
 ```
-EXAMPLE: /scratch/<your_username>/blast
+mkdir /scratch/ffeltus/human-cdna-genome-blast
+cd /scratch/ffeltus/human-cdna-genome-blast
 ```
 
 Download the files you will need to this directory.
