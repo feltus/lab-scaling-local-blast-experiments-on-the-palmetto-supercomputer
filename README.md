@@ -21,7 +21,9 @@ https://docs.rcd.clemson.edu/palmetto/
 * Open a terminal and log into a Palmetto headnode.
 Get an interactive node on Palmetto.  Here is an example SLURm command to get an interactive node:
 
-Inline code: srun --nodes=1 --ntasks-per-node=1 --time=02:00:00 --pty bash -i
+```
+srun --nodes=1 --ntasks-per-node=1 --time=02:00:00 --pty bash -i
+```
 
 Download the BLAST executable.
 wget https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.11.0/ncbi-blast-2.11.0+-x64-linux.tar.gz
