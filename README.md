@@ -46,9 +46,9 @@ Download the BLAST executable.
 wget https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.11.0/ncbi-blast-2.11.0+-x64-linux.tar.gz
 ```
 Uncompress the BLAST tarball and copy files into your path.
-Uncompress that tarball (a directory of files that have been double compressed with tar and gzip applications). 
+Uncompress that tarball which is a directory of files that have been double compressed with tar and gzip applications. 
 
-Make a directory called ‘bin’ in your home directory. 
+Make a directory called *bin* in your home directory. 
 
 ```
 mkdir ~/bin
@@ -59,7 +59,7 @@ Go into the BLAST bin directory:
 cd ~/ncbi-blast-2.11.0+/bin
 ```
 
-Copy all the binaries here to the ‘~/bin’ directory you made in your home directory.  This will put all of the BLAST programs in your path. 
+Copy all the binaries here to the *~/bin* directory you made in your home directory.  This will put all of the BLAST programs in your path. 
 
 If everything worked, you can run BLAST commands like:
 
@@ -92,7 +92,7 @@ http://ftp.ensembl.org/pub/release-101/fasta/homo_sapiens/dna/Homo_sapiens.GRCh3
 ftp://ftp.ensembl.org/pub/release-101/fasta/homo_sapiens/ncrna/Homo_sapiens.GRCh38.ncrna.fa.gz
 ```
 
-Uncompress the files and ‘head’ and ‘tail’ them on the Linux command line to see if they look correct.
+Uncompress the files and *head* and *tail* them on the Linux command line to see if they look correct.
 
 ***Step B. Index the Genome file for BLAST***
 
@@ -123,7 +123,7 @@ squeue -u YOUR_USERNAME
 If it worked you will see indexed files that start with HG38_GENOME in the scratch2 directory where the genome FASTA file is located.
 
 # Task C. BLAST Human cDNA sequences against the Human Genome
-You will need blastn for this.  The cDNA hits will provide coordinates of genes in the human genome. Type the ‘blastn -h’ command for the command line parameters.
+You will need blastn for this.  The cDNA hits will provide coordinates of genes in the human genome. Type the *blastn -h* command for the command line parameters.
 
 ***Step A. Make a SLURM script to runthe BLAST analysis as a batch job.***
 
@@ -154,6 +154,6 @@ If it worked you will see BLAST hits in the redirected output file (e.g. HG38-NC
 
 ***Step B. Turn in your report in the homework folder in the Praxis LXP VM.***
 
-Count the number of sequences in the non-coding RNA file and count the number of hits in your BLASTN output file.  (NOTE: You can count the number of sequences in a FASTA file like this: ‘cat FILE | grep ‘>’ | wc -l’ and you can count the number of one per line hits like this ‘wc -l HG38-NCRNA_HG38Genome.blastn’
+Count the number of sequences in the non-coding RNA file and count the number of hits in your BLASTN output file.  (NOTE: You can count the number of sequences in a FASTA file like this: *cat FILE | grep '>' | wc -l* and you can count the number of one per line hits like this *wc -l HG38-NCRNA_HG38Genome.blastn*.
 Paste these into a text file in the Praxis Linux VM and copy to the homework folder in the Praxis LXP VM.  (If you need more practice, run the analysis at different E-value cutoffs and see how many hits you get … totally optional).
 
