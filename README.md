@@ -1,5 +1,3 @@
-# lab-scaling-local-blast-experiments-on-the-palmetto-supercomputer
-
 # Lab Overview
 The Basic Local Alignment Search Tool (BLAST) will perform pairwise alignments using the word-based BLAST search algorithm: Seed, Search, Score, Extend.  The NCBI website is great for a few BLAST searches, but a local install of BLAST on a Linux machine allows one to scale up and control the BLAST experiment. 
 
