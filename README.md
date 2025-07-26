@@ -152,8 +152,3 @@ This will take a while. Use the squeue command to see if the job is still runnin
 
 If it worked you will see BLAST hits in the redirected output file (e.g. HG38-NCRNA_HG38Genome.blastn) where each line is a BLAST hit.
 
-***Step B. Turn in your report in the homework folder in the Praxis LXP VM.***
-
-Count the number of sequences in the non-coding RNA file and count the number of hits in your BLASTN output file.  (NOTE: You can count the number of sequences in a FASTA file like this: *cat FILE | grep '>' | wc -l* and you can count the number of one per line hits like this *wc -l HG38-NCRNA_HG38Genome.blastn*.
-Paste these into a text file in the Praxis Linux VM and copy to the homework folder in the Praxis LXP VM.  (If you need more practice, run the analysis at different E-value cutoffs and see how many hits you get … totally optional).
-
